@@ -12,6 +12,7 @@ import actions1 from "../../assets/icons/card-actions-1.svg";
 import actions2 from "../../assets/icons/card-actions-2.svg";
 import actions3 from "../../assets/icons/card-actions-3.svg";
 import actions4 from "../../assets/icons/card-actions-4.svg";
+import { getBlogSlug } from "../../pages/Blog/blogData";
 import "./Blogs.css";
 
 interface Blog {
@@ -23,6 +24,7 @@ interface Blog {
   avatar: string;
   date: string;
   actions: string;
+  detailTitle: string;
 }
 
 const BLOGS: Blog[] = [
@@ -36,6 +38,7 @@ const BLOGS: Blog[] = [
     avatar: avatarEmily,
     date: "23 May 2026 · 5 min read",
     actions: actions1,
+    detailTitle: "10 Effective Strategies for Sustainable Weight Loss",
   },
   {
     image: blog2,
@@ -47,6 +50,7 @@ const BLOGS: Blog[] = [
     avatar: avatarSarah,
     date: "23 May 2026 · 5 min read",
     actions: actions2,
+    detailTitle: "Understanding Emotional Eating and How to Overcome It",
   },
   {
     image: blog3,
@@ -58,6 +62,7 @@ const BLOGS: Blog[] = [
     avatar: avatarMark,
     date: "23 May 2026 · 5 min read",
     actions: actions3,
+    detailTitle: "Understanding Macronutrients: Carbohydrates, Proteins, and Fats",
   },
   {
     image: blog4,
@@ -69,6 +74,7 @@ const BLOGS: Blog[] = [
     avatar: avatarEmily2,
     date: "23 May 2026 · 5 min read",
     actions: actions4,
+    detailTitle: "Healthy and Flavorful Lunch Ideas for a Busy Lifestyle",
   },
 ];
 
@@ -84,14 +90,14 @@ const Blogs = () => {
         <div className="blogs__grid">
           {BLOGS.map((blog) => (
             <article className="blog-card" key={blog.title}>
-              <div className="blog-card__image">
+              <a className="blog-card__image" href={`/blog/${getBlogSlug(blog.detailTitle)}`} aria-label={`Read ${blog.title}`}>
                 <img src={blog.image} alt={blog.title} />
-              </div>
+              </a>
               <div className="blog-card__body">
                 <span className="text-small blog-card__category">
                   {blog.category}
                 </span>
-                <h3>{blog.title}</h3>
+                <h3><a href={`/blog/${getBlogSlug(blog.detailTitle)}`}>{blog.title}</a></h3>
                 <p className="text-muted">{blog.description}</p>
               </div>
               <div className="blog-card__footer">
@@ -102,11 +108,13 @@ const Blogs = () => {
                     <p className="text-xs text-muted">{blog.date}</p>
                   </div>
                 </div>
+                <a href={`/blog/${getBlogSlug(blog.detailTitle)}`} aria-label={`Read ${blog.title}`}>
                 <img
                   src={blog.actions}
                   alt=""
                   className="blog-card__actions"
                 />
+                </a>
               </div>
             </article>
           ))}
