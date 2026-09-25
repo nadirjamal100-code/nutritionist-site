@@ -62,9 +62,9 @@ const Footer = () => {
 
         <div className="footer__bottom">
           <div className="footer__contacts">
-            <a href="mailto:hello@squareup.com" className="footer__contact">
+            <a href="mailto:hello@example.com" className="footer__contact">
               <img src={mailIcon} alt="" />
-              hello@squareup.com
+              hello@example.com
             </a>
             <a href="tel:+910000000000" className="footer__contact">
               <img src={phoneIcon} alt="" />

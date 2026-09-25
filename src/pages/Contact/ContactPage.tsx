@@ -19,7 +19,7 @@ const ContactPage = () => {
     const phone = String(form.get("phone") ?? "");
     const body = `${String(form.get("message") ?? "")}\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}`;
     const subject = `Contact request from ${name}`;
-    window.location.href = `mailto:support@nutritionist.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:hello@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
 
@@ -36,7 +36,7 @@ const ContactPage = () => {
               <p>We value your feedback, questions, and concerns at Nutritionist. Our dedicated team is here to assist you and provide the support you need on your nutritional journey. Please don't hesitate to reach out to us using any of the following contact methods</p>
             </div>
             <div className="contact-methods">
-              <a className="contact-method" href="mailto:support@nutritionist.com"><img src={mailIcon} alt="" /><span>support@nutritionist.com</span></a>
+              <a className="contact-method" href="mailto:hello@example.com"><img src={mailIcon} alt="" /><span>hello@example.com</span></a>
               <a className="contact-method" href="tel:+910000000000"><img src={phoneIcon} alt="" /><span>+91 00000 00000</span></a>
               <div className="contact-method"><img src={pinIcon} alt="" /><span>Some Where in the World</span></div>
             </div>
