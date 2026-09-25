@@ -16,13 +16,13 @@ const NAV_LINKS = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isAbout = window.location.pathname.replace(/\/$/, "") === "/about";
-  const isTeam = window.location.pathname.replace(/\/$/, "") === "/team";
-  const isProcess = window.location.pathname.replace(/\/$/, "") === "/process";
-  const isPricing = window.location.pathname.replace(/\/$/, "") === "/pricing";
-  const currentPath = window.location.pathname.replace(/\/$/, "");
-  const isBlog = currentPath === "/blog" || currentPath.startsWith("/blog/");
-  const isContact = currentPath === "/contact";
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+  const isActiveLink = (href: string) =>
+    href === "/"
+      ? currentPath === "/"
+      : href === "/blog"
+        ? currentPath === href || currentPath.startsWith(`${href}/`)
+        : currentPath === href;
 
   return (
     <>
@@ -44,9 +44,13 @@ const Header = () => {
 
           <nav className={`header__nav ${isMenuOpen ? "is-open" : ""}`}>
             <ul>
-              {NAV_LINKS.map((link, i) => (
+              {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className={(isAbout ? i === 1 : isTeam ? i === 2 : isProcess ? i === 3 : isPricing ? i === 4 : isBlog ? i === 5 : isContact ? false : i === 0) ? "is-active" : ""}>
+                  <a
+                    href={link.href}
+                    className={isActiveLink(link.href) ? "is-active" : ""}
+                    aria-current={isActiveLink(link.href) ? "page" : undefined}
+                  >
                     {link.label}
                   </a>
                 </li>

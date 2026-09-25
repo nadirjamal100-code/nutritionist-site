@@ -34,6 +34,10 @@
   color: var(--color-primary);
 }
 
+.footer__nav a.is-active {
+  color: var(--color-primary);
+}
+
 .footer__to-top {
   display: flex;
   align-items: center;

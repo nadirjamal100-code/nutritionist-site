@@ -20,6 +20,14 @@ const scrollToTop = () => {
 };
 
 const Footer = () => {
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+  const isActiveLink = (href: string) =>
+    href === "/"
+      ? currentPath === "/"
+      : href === "/blog"
+        ? currentPath === href || currentPath.startsWith(`${href}/`)
+        : currentPath === href;
+
   return (
     <footer className="footer">
       <Container>
@@ -32,7 +40,13 @@ const Footer = () => {
             <ul>
               {FOOTER_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href}>{link.label}</a>
+                  <a
+                    href={link.href}
+                    className={isActiveLink(link.href) ? "is-active" : ""}
+                    aria-current={isActiveLink(link.href) ? "page" : undefined}
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
