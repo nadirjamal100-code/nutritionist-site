@@ -3,6 +3,7 @@ import Container from "../Container/Container";
 import Button from "../Button/Button";
 import logo from "../../assets/icons/logo.svg";
 import promoBanner from "../../assets/Container.svg";
+import arrowIcon from "../../assets/icons/icon-arrow.svg";
 import "./Header.css";
 
 const NAV_LINKS = [
@@ -33,6 +34,11 @@ const Header = () => {
           aria-label="Join Our Personalized Nutrition Demo For Free"
         >
           <img src={promoBanner} alt="" className="promo-banner__art" />
+          <span className="promo-banner__mobile-copy">
+            <span className="promo-banner__mark" aria-hidden="true" />
+            <span>Join Our Personalized Nutrition Demo For Free</span>
+            <img src={arrowIcon} alt="" />
+          </span>
         </a>
       </div>
 
