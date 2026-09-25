@@ -1,0 +1,73 @@
+/*
+  Design tokens — sampled directly from the provided Figma export
+  (Home_Page_-_Desktop__1_.png) via pixel analysis, and from the
+  exported SVG assets (Logo.svg fill values). These are real values,
+  not placeholders.
+*/
+
+:root {
+  /* Color: brand */
+  --color-primary: #cbea7b; /* lime green — logo, buttons, active nav */
+  --color-primary-dark: #1a3129; /* deep forest green — header/footer/CTA bg */
+
+  /* Color: surfaces */
+  --color-background: #fafdf2; /* warm cream page background */
+  --color-surface: #ffffff;
+  --color-surface-tint: #f2f7e3; /* soft lime-tinted card background */
+  --color-hero-panel: #d1e3a9; /* hero left panel sage-green */
+
+  /* Color: text */
+  --color-text: #16281f; /* headings */
+  --color-text-secondary: #5b6358; /* body copy */
+  --color-text-muted: #838a7d;
+  --color-text-on-dark: #ffffff;
+  --color-text-on-dark-muted: #c8d3cb;
+
+  --color-border: #eef8d3;
+
+  /* Typography */
+  --font-family-heading: "Poppins", "Segoe UI", sans-serif;
+  --font-family-body: "DM Sans", "Segoe UI", sans-serif;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.375rem;
+  --fs-h4: 1.125rem;
+  --fs-body-lg: 1.0625rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-xs: 0.8125rem;
+
+  --lh-heading: 1.2;
+  --lh-body: 1.6;
+
+  /* Spacing scale (8px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* Shadow */
+  --shadow-sm: 0 2px 8px rgba(22, 40, 31, 0.06);
+  --shadow-md: 0 8px 24px rgba(22, 40, 31, 0.08);
+
+  /* Layout */
+  --content-max-width: 1280px;
+  --container-padding-desktop: 32px;
+  --container-padding-tablet: 24px;
+  --container-padding-mobile: 20px;
+
+  --header-height: 84px;
+  --header-height-mobile: 64px;
+}

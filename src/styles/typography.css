@@ -1,0 +1,86 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  color: var(--color-text);
+  line-height: var(--lh-heading);
+  font-weight: 600;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+}
+
+p {
+  font-family: var(--font-family-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+#root p {
+  font-size: 17px;
+}
+
+.text-lg {
+  font-size: var(--fs-body-lg);
+}
+
+.text-small {
+  font-size: var(--fs-small);
+}
+
+.text-xs {
+  font-size: var(--fs-xs);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.eyebrow {
+  font-family: var(--font-family-body);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --fs-h1: 2.75rem;
+    --fs-h2: 2.1rem;
+    --fs-h3: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --fs-h1: 2.1rem;
+    --fs-h2: 1.75rem;
+    --fs-h3: 1.35rem;
+    --fs-body-lg: 1rem;
+  }
+}
